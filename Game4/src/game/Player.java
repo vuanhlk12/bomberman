@@ -17,12 +17,12 @@ import javax.swing.ImageIcon;
 public class Player extends GameObject {
 
     double hp;
-    int bomnumber = 10;
+    int bomnumber = 2;
     int bomsize = 1;
 
     public Player(int x, int y, Handler handler, ID id) {
         super(x, y, handler, id);
-        hp = 100;
+        hp = 3;
     }
 
     public synchronized void tick() {
