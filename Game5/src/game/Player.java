@@ -8,6 +8,7 @@ package game;
 import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.Image;
+import java.awt.Rectangle;
 import javax.swing.ImageIcon;
 
 /**
@@ -64,13 +65,16 @@ public class Player extends GameObject {
 
                 }
             }
-        }
-
+        }     
         System.out.println("Life remaining: " + hp);
         if (hp == 0) {
             this.removeits();
         }
 
+    }
+    @Override
+    public Rectangle getRec(int i, int j) {// hàm trả về 1 hình chữ nhật, i và j dùng để lấy hình chữ nhật có vị trí (+i,+j) so với đối tượng
+        return new Rectangle(x + i * step, y + j * step, 35, 35);
     }
 
     public double getHp() {
@@ -93,7 +97,7 @@ public class Player extends GameObject {
         if (this.id == ID.Player) {
             Image img = null;
             img = new ImageIcon("img\\Hero.png").getImage();
-            g.drawImage(img, x, y, 40, 40, null);
+            g.drawImage(img, x, y, 35, 35, null);
         }
 
     }

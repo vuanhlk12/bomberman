@@ -16,11 +16,9 @@ import javax.swing.ImageIcon;
  */
 public class Enemy2 extends Enemy {
 
-
     int tg = 3;
 
     //int time = 0;
-
     public Enemy2(int x, int y, Handler handler, ID id) {
         super(x, y, handler, id);
         this.step = 5;
@@ -155,7 +153,7 @@ public class Enemy2 extends Enemy {
         for (int i = 0; i < handler.object.size(); i++) {
             GameObject temp = handler.object.get(i);
             if (temp.id == ID.Player) {
-                if (this.getY() == temp.getY()) {
+                if (this.getY() / 40 == temp.getY() / 40) {
                     if (this.getX() < temp.getX()) {
                         return 0;
                     }
@@ -163,7 +161,7 @@ public class Enemy2 extends Enemy {
                         return 1;
                     }
                 }
-                if (this.getX() == temp.getX()) {
+                if (this.getX() / 40 == temp.getX() / 40) {
                     if (this.getY() < temp.getY()) {
                         return 2;
                     }
