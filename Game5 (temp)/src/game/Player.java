@@ -76,7 +76,7 @@ public class Player extends GameObject {
     }
     @Override
     public Rectangle getRec(int i, int j) {// hàm trả về 1 hình chữ nhật, i và j dùng để lấy hình chữ nhật có vị trí (+i,+j) so với đối tượng
-        return new Rectangle(x + i * step, y + j * step, 30, 30);
+        return new Rectangle(x + i * step, y + j * step, 35, 35);
     }
 
     public double getHp() {
@@ -99,7 +99,7 @@ public class Player extends GameObject {
         if (this.id == ID.Player) {
             Image img = null;
             img = new ImageIcon("img\\Hero.png").getImage();
-            g.drawImage(img, x, y, 30, 30, null);
+            g.drawImage(img, x, y, 35, 35, null);
         }
 
     }

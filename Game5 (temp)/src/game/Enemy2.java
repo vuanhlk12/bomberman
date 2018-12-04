@@ -47,24 +47,24 @@ public class Enemy2 extends Enemy {
                 if (n != 4) {
                     switch (n) {
                         case 0:
-                            if (this.canMoveR()) {
-                                this.x += this.step;
-                            }
+
+                            this.x += this.step;
+
                             break;
                         case 1:
-                            if (this.canMoveL()) {
-                                x -= step;
-                            }
+
+                            x -= step;
+
                             break;
                         case 3:
-                            if (this.canMoveU()) {
-                                y -= step;
-                            }
+
+                            y -= step;
+
                             break;
                         case 2:
-                            if (this.canMoveD()) {
-                                y += step;
-                            }
+
+                            y += step;
+
                             break;
                         default:
                             break;
@@ -155,18 +155,18 @@ public class Enemy2 extends Enemy {
             GameObject temp = handler.object.get(i);
             if (temp.id == ID.Player) {
                 if (this.getY() - temp.getY() >= -10 && this.getY() - temp.getY() <= 0) {
-                    if (this.getX() < temp.getX()) {
+                    if (this.getX() < temp.getX() && this.canMoveR()) {
                         return 0;
                     }
-                    if (this.getX() > temp.getX()) {
+                    if (this.getX() > temp.getX() && this.canMoveL()) {
                         return 1;
                     }
                 }
                 if (this.getX() - temp.getX() >= -10 && this.getX() - temp.getX() <= 0) {
-                    if (this.getY() < temp.getY()) {
+                    if (this.getY() < temp.getY() && this.canMoveD()) {
                         return 2;
                     }
-                    if (this.getY() > temp.getY()) {
+                    if (this.getY() > temp.getY() && this.canMoveU()) {
                         return 3;
                     }
                 }
