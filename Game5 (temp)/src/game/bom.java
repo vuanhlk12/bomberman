@@ -56,6 +56,7 @@ public class bom extends GameObject {
             time++;
             lastTime = currentTime;
         }
+        
         breakWall();
         reBreakWall();
 

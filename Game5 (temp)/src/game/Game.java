@@ -64,8 +64,8 @@ public class Game extends Canvas {
         for (i = 0; i < wall.size(); i++) {
             handler.addObject(wall.get(i));
         }
-        int[] a1 = {1, 1, 1, 1, 3, 3, 3, 3, 6, 7, 8, 11, 9};
-        int[] b1 = {3, 6, 5, 8, 5, 7, 8, 9, 7, 7, 7, 9, 11};
+        int[] a1 = {1, 1, 1, 1, 3, 3, 3, 3, 6, 7, 8, 11, 9, 3};
+        int[] b1 = {3, 6, 5, 8, 5, 7, 8, 9, 7, 7, 7, 9, 11, 11};
         for (i = 0; i < a1.length; i++) {
             GameObject n = new Wall2(a1[i] * 40, b1[i] * 40, handler, ID.Wall2);
             handler.addObject(n);

@@ -154,7 +154,7 @@ public class Enemy2 extends Enemy {
         for (int i = 0; i < handler.object.size(); i++) {
             GameObject temp = handler.object.get(i);
             if (temp.id == ID.Player) {
-                if (this.getY() / 40 == temp.getY() / 40) {
+                if ((this.getY() + 20) / 40 == (temp.getY() + 20) / 40) {
                     if (this.getX() < temp.getX()) {
                         return 0;
                     }
@@ -162,7 +162,7 @@ public class Enemy2 extends Enemy {
                         return 1;
                     }
                 }
-                if (this.getX() / 40 == temp.getX() / 40) {
+                if ((this.getX() + 20) / 40 == (temp.getX() + 20) / 40) {
                     if (this.getY() < temp.getY()) {
                         return 2;
                     }
