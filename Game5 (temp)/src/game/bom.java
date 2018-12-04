@@ -58,7 +58,7 @@ public class bom extends GameObject {
         }
         
         breakWall();
-        reBreakWall();
+       // reBreakWall();
 
     }
 
@@ -125,6 +125,7 @@ public class bom extends GameObject {
                                 if (dano[i % 4] == false) {
                                     range[i % 4] = i / 4 + 1;
                                     dano[i % 4] = true;
+                                    temp.removeits();
 
                                 }
                             }
@@ -144,8 +145,8 @@ public class bom extends GameObject {
                         for (int i = 0; i < r1.size(); i++) {
                             if (r1.get(i).intersects(temp.getRec(0, 0))) {
                                 if (dano[i % 4] == false) {
-                                    range[i % 4] = i / 4 + 1;
-                                    dano[i % 4] = true;
+                                    range[i % 4] = bomsize;
+                                    temp.removeits();
 
                                 }
                             }
@@ -155,8 +156,8 @@ public class bom extends GameObject {
                         for (int i = 0; i < r1.size(); i++) {
                             if (r1.get(i).intersects(temp.getRec(0, 0))) {
                                 if (dano[i % 4] == false) {
-                                    range[i % 4] = i / 4 + 1;
-                                    dano[i % 4] = true;
+                                    range[i % 4] = bomsize;
+                                    temp.removeits();
 
                                 }
                             }
