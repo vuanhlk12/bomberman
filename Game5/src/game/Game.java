@@ -18,7 +18,6 @@ import javax.swing.JFrame;
  *
  * @author vuanhlk12
  */
-
 // Đây là hàm main, từ hàm này khởi tạo ra cửa sổ window
 public class Game extends Canvas {
 
@@ -32,14 +31,14 @@ public class Game extends Canvas {
         handler = new Handler();// xem các hàm ở class handler, mục đích của hàm này là để lưu lại tất cả các object trong game
         this.addKeyListener(new KeyInput(handler));
         JFrame frame = new JFrame("Bomberman - PVA");
-        frame.setPreferredSize(new Dimension(width,height));
-        frame.setMaximumSize(new Dimension(width,height));
-        frame.setMinimumSize(new Dimension(width,height));
+        frame.setPreferredSize(new Dimension(width, height));
+        frame.setMaximumSize(new Dimension(width, height));
+        frame.setMinimumSize(new Dimension(width, height));
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setResizable(false);
         frame.add(this);
         frame.setVisible(true);
-        
+
         //handler.addFromFile("map\\1.txt");
         int i, j;
         for (i = 0; i < 13; i++) {
@@ -65,8 +64,8 @@ public class Game extends Canvas {
         for (i = 0; i < wall.size(); i++) {
             handler.addObject(wall.get(i));
         }
-        int[] a1 = {1, 1, 1, 1, 2, 2, 3, 3, 3, 3, 3, 6, 7, 8, 11, 9};
-        int[] b1 = {3, 6, 5, 8, 3, 5, 5, 6, 7, 8, 9, 7, 7, 7, 9, 11};
+        int[] a1 = {1, 1, 1, 1, 3, 3, 3, 3, 3, 6, 7, 8, 11, 9};
+        int[] b1 = {3, 6, 5, 8, 5, 6, 7, 8, 9, 7, 7, 7, 9, 11};
         for (i = 0; i < a1.length; i++) {
             GameObject n = new Wall2(a1[i] * 40, b1[i] * 40, handler, ID.Wall2);
             handler.addObject(n);
@@ -78,13 +77,12 @@ public class Game extends Canvas {
         handler.object.add(new BomSizePlus(40 * 10, 40, handler, ID.BomSizePlus));
         handler.object.add(new LifePlus(40 * 11, 40 * 2, handler, ID.LifePlus));
         handler.object.add(new speed(40 * 9, 40, handler, ID.Speed));
-        
+
         handler.addObject(new Player(40, 40, handler, ID.Player));
         // toàn bộ các dòng trên đều là thêm object vào handler
         this.run();// chạy chương trình
 
     }
-
 
     public void run() {
 
@@ -105,12 +103,12 @@ public class Game extends Canvas {
             if (running) {
                 render();
             }
-            frames++;//cái dưới để hiển thị fps, thích thì bật k thích thì thôi
+            /*frames++;//cái dưới để hiển thị fps, thích thì bật k thích thì thôi
             if (System.currentTimeMillis() - timer > 1000) {
                 timer += 1000;
-                //    System.out.println("FPS: " + frames);
+                System.out.println("FPS: " + frames);
                 frames = 0;
-            }
+            }*/
         }
     }
 

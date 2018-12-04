@@ -18,7 +18,7 @@ import javax.swing.ImageIcon;
 public class Player extends GameObject {
 
     double hp;
-    int bomnumber = 2;
+    int bomnumber = 1;
     int bomsize = 1;
     int move = 0;
     int sp = 3;// dùng để set speed cho player (từ 0-3, càng thấp càng nhanh)
@@ -30,6 +30,7 @@ public class Player extends GameObject {
     public Player(int x, int y, Handler handler, ID id) {
         super(x, y, handler, id);
         hp = 3;
+        System.out.println("Life remaining: " + hp);
     }
 
     public synchronized void tick() {
@@ -66,7 +67,7 @@ public class Player extends GameObject {
                 }
             }
         }     
-        System.out.println("Life remaining: " + hp);
+        
         if (hp == 0) {
             this.removeits();
         }

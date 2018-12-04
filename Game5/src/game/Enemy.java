@@ -96,6 +96,7 @@ public class Enemy extends GameObject {
                 if (temp.id == ID.Player) {
                     if (this.getRec(0, 0).intersects(temp.getRec(0, 0)) && chamPlayer == false) {//kiểm tra va chạm, nếu va chạm với player thì trừ máu player
                         ((Player) temp).hp--;
+                        System.out.println("Life remaining: " + ((Player) temp).hp);
                         chamPlayer = true;
                     }
                 }

@@ -165,7 +165,8 @@ public class bom extends GameObject {
                         for (int i = 0; i < r1.size(); i++) {
                             if (r1.get(i).intersects(temp.getRec(0, 0)) || this.getRec(0, 0).intersects(temp.getRec(0, 0))) {
                                 if (chamPlayer == false) {
-                                    ((Player) temp).hp -= 0.5;
+                                    ((Player) temp).hp -= 1;
+                                    System.out.println("Life remaining: " + ((Player) temp).hp);
                                     chamPlayer = true;
                                 }
                             }

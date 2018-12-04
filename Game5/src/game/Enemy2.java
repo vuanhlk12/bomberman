@@ -131,6 +131,7 @@ public class Enemy2 extends Enemy {
                     if (this.getRec(0, 0).intersects(temp.getRec(0, 0)) && chamPlayer == false) {
                         ((Player) temp).hp--;
                         chamPlayer = true;
+                        System.out.println("Life remaining: " + ((Player) temp).hp);
                     }
                 }
             }

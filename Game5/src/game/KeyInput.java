@@ -39,11 +39,10 @@ public class KeyInput extends KeyAdapter {
                 }
 
                 if (key == KeyEvent.VK_SPACE) {
-                    for (int k = 0; k < 2; k++) {
-                        if (((Player) temp).bomnumber > 0) {
-                            handler.addObject(new bom((temp.getX() + 20) / 40 * 40, (temp.getY() + 20) / 40 * 40, handler, ID.Bom, ((Player) temp).bomsize));
-                            ((Player) temp).bomnumber--;
-                        }
+
+                    if (((Player) temp).bomnumber > 0) {
+                        handler.addObject(new bom((temp.getX() + 20) / 40 * 40, (temp.getY() + 20) / 40 * 40, handler, ID.Bom, ((Player) temp).bomsize));
+                        ((Player) temp).bomnumber--;
 
                     }
                 }
